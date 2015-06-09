@@ -61,9 +61,8 @@ module.exports = function(grunt) {
 				}
 			}
 		}
+});
 
-	});
-
-	grunt.registerTask('build:dev', ['webpack:client', 'copy:html']);
-	grunt.registerTask('lint', ['jshint:dev']);
-	grunt.registerTask('default', ['build:dev']);
+grunt.registerTask('build:dev', ['webpack:client', 'copy:html']);
+grunt.registerTask('lint', ['jshint:dev']);
+grunt.registerTask('default', ['build:dev']);
