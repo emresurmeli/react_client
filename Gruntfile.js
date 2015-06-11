@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	grunt.initConfig({
-		
+
 		jshint: {
 			dev: {
 				src: ['Gruntfile.js', 'server.js', 'tests/*.js', 'models/*.js', 'routes/*.js', 'app/**/**/*.js', 'build.js']
@@ -20,10 +20,18 @@ module.exports = function(grunt) {
 
 		webpack: {
 			client: {
-				entry: __dirname + '/app/js/client.js',
+				entry: __dirname + '/app/js/client.jsx',
 				output: {
 					path: 'build/',
 					file: 'bundle.js'
+				},
+				module: {
+					loaders: [
+						{
+							test: /\.jsx$/,
+							loader: 'jsx-loader'
+						}
+					]
 				}
 			},
 			test: {
@@ -61,8 +69,9 @@ module.exports = function(grunt) {
 				}
 			}
 		}
-});
+	});
 
-grunt.registerTask('build:dev', ['webpack:client', 'copy:html']);
-grunt.registerTask('lint', ['jshint:dev']);
-grunt.registerTask('default', ['build:dev']);
+	grunt.registerTask('build:dev', ['webpack:client', 'copy:html']);
+	grunt.registerTask('lint', ['jshint:dev']);
+	grunt.registerTask('default', ['build:dev']);
+};
