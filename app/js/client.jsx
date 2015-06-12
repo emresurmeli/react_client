@@ -5,10 +5,12 @@ var NoteList = require('./components/notes_list.jsx');
 var request = require('superagent');
 
 var App = React.createClass({
+  // set default state
   getInitialState: function() {
     return {notes: [], title: "Notes: "};
   },
 
+  // check if server connected
   componentDidMount: function() {
     request
       .get('/api/notes')
@@ -19,6 +21,7 @@ var App = React.createClass({
       }.bind(this));
   },
 
+  // set state
   render: function() {
     return (
       <main>
