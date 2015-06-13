@@ -39,7 +39,7 @@ describe('notes REST api', function() {
       expect(typeof res.body).to.eql('object');
       expect(Array.isArray(res.body)).to.eql(true);
 
-      done(); 
+      done();
     });
   });
 
