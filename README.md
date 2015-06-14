@@ -2,9 +2,9 @@
 
 To run:
 
-`npm install`
-`mkdir db`
-`mongod --dbpath=./db`
+`npm install`,
+`mkdir db`,
+`mongod --dbpath=./db`,
 `node server.js`
 
 Grunt commands:
