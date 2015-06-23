@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react');
-var Note = require('./note.jsx');
+var Note  = require('./note.jsx');
 
 module.exports = React.createClass({
   renderNotes: function() {

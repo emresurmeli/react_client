@@ -1,8 +1,8 @@
 'use strict';
 
-var React = require('react');
+var React    = require('react');
 var NoteList = require('./components/notes_list.jsx');
-var request = require('superagent');
+var request  = require('superagent');
 
 var App = React.createClass({
   // set default state
@@ -21,7 +21,7 @@ var App = React.createClass({
       }.bind(this));
   },
 
-  // set state
+  // set statesubl
   render: function() {
     return (
       <main>
