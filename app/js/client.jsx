@@ -3,6 +3,7 @@
 var React    = require('react');
 var NoteList = require('./components/notes_list.jsx');
 var request  = require('superagent');
+var Options   = require('./components/button_component.jsx');
 
 var App = React.createClass({
   // set default state
@@ -21,12 +22,13 @@ var App = React.createClass({
       }.bind(this));
   },
 
-  // set statesubl
+  // set state
   render: function() {
     return (
       <main>
         <h1>{this.state.title}</h1>
         <NoteList data={this.state.notes} />
+        <Options />
       </main>
     )
   }
